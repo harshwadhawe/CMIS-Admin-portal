@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Confirmation Link Example</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #500000;
+            margin-bottom: 20px;
+        }
+        .example-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #500000;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 20px 0;
+            transition: background 0.3s;
+        }
+        .example-link:hover {
+            background: #700000;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        pre {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .section {
+            margin: 25px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🎓 CMIS Mentor Confirmation Page</h1>
+        
+        <div class="section">
+            <h2>Test the Mentor Confirmation Page</h2>
+            <p>Click the link below to see how the mentor confirmation page looks:</p>
+            <a href="/mentor/confirm?student_name=John%20Smith&student_email=john.smith@tamu.edu" 
+               class="example-link">
+                View Sample Mentor Assignment
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>URL Format</h2>
+            <p>The mentor confirmation page accepts the following URL parameters:</p>
+            <pre><code>/mentor/confirm?student_name=...&student_email=...</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>Parameters</h2>
+            <ul>
+                <li><code>student_name</code> - Name of the assigned student (required)</li>
+                <li><code>student_email</code> - Email of the student (required)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Integration with Email</h2>
+            <p>In your mentor email template, you can include a link like this:</p>
+            <pre><code>&lt;a href="https://your-domain.com/mentor/confirm?student_name={{studentName}}&student_email={{studentEmail}}"&gt;
+  View Your Mentee Assignment
+&lt;/a&gt;</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>Example Email Integration (N8N Workflow)</h2>
+            <p>When sending emails through your N8N workflow, construct the URL with actual data:</p>
+            <pre><code>const confirmationUrl = `${process.env.APP_URL}/mentor/confirm?` + 
+  `student_name=${encodeURIComponent(studentName)}` +
+  `&student_email=${encodeURIComponent(studentEmail)}`;</code></pre>
+        </div>
+    </div>
+</body>
+</html>
