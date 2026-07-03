@@ -472,9 +472,6 @@ Make sure to set these in your deployment platform:
 
 This project is part of the TAMU CMIS system.
 
-## 👥 Authors
-
-- Siddharth Kabra
 
 ## 📞 Support
 
