@@ -87,7 +87,7 @@ npm install -g yarn
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/siddharthkabra-811/cmis-admin-portal.git
+git clone REPO_URL
 cd cmis-admin-portal
 ```
 
